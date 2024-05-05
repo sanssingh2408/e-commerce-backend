@@ -29,7 +29,11 @@ app.use(express.urlencoded({ extended: true }))
 
 
 app.use(express.json())
-app.use(cors({ origin: 'https://e-commerce-psi-three-88.vercel.app' }));
+app.use(cors({
+    origin: 'https://e-commerce-psi-three-88.vercel.app',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+}));
 app.use(express.static(path.join(__dirname, 'build')));
 
 
